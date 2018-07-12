@@ -1,0 +1,25 @@
+.titulo{
+    font-family: 'Berkshire Swash', cursive;
+    font-size: 1.5em;
+    margin: 0em;
+}
+.logo{
+    width: 5em;
+}
+body{
+    background-color: rgb(212, 243, 230);
+    
+}
+.redSocial{
+    background-color: rgb(223, 241, 234);
+    color: black;
+    margin-bottom: 2em;
+    border-radius: 2em;
+    width: 15em;
+}
+.fa-facebook-square{
+    color: blue;
+}
+.fa-google-plus-square{
+    color: red;
+}
