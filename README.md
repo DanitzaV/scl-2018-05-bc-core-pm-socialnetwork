@@ -42,30 +42,30 @@ Si quieres ser parte de esta red social de mujeres positivas, Únete!!
 
 Para poder recolectar datos de mujeres que utilizan redes sociales y les parece genial la idea de una red social feminista realizamos la siguiente encuesta.
 
-<img src="img/encuesta.png"  height="400" alt="encuesta"/>
-<img src="img/encuesta2.png"  height="400" alt="encuesta2"/>
+<img src="./assets/img/encuesta.png"  height="400" alt="encuesta"/>
+<img src="./assets/img/encuesta2.png"  height="400" alt="encuesta2"/>
 
 ### Resultados obtenidos en encuesta de filtro
 
-<img src="img/1.png"  height="400" alt="1"/>
-<img src="img/2.png"  height="400" alt="2"/>
-<img src="img/3.png"  height="400" alt="3"/>
-<img src="img/4.png"  height="400" alt="4"/>
-<img src="img/5.png"  height="400" alt="5"/>
-<img src="img/6.png"  height="400" alt="6"/>
-<img src="img/7.png"  height="400" alt="7"/>
-<img src="img/8.png"  height="400" alt="8"/>
+<img src="./assets/img/1.png"  height="400" alt="1"/>
+<img src="./assets/img/2.png"  height="400" alt="2"/>
+<img src="./assets/img/3.png"  height="400" alt="3"/>
+<img src="./assets/img/4.png"  height="400" alt="4"/>
+<img src="./assets/img/5.png"  height="400" alt="5"/>
+<img src="./assets/img/6.png"  height="400" alt="6"/>
+<img src="./assets/img/7.png"  height="400" alt="7"/>
+<img src="./assets/img/8.png"  height="400" alt="8"/>
 
 ### Conclusion obtenida
 
 ## Prototipo de Baja fidelidad
 
-<img src="img/pbf1.png"  height="400" alt="pbf1"/>
+<img src="./assets/img/pbf1.png"  height="400" alt="pbf1"/>
 
 ## Prototipo de Alta fidelidad
 
-<img src="img/colaggepaf1.png"  height="400" alt="colaggepaf1"/>
-<img src="img/colaggepaf2.png"  height="400" alt="colaggepaf2"/>
+<img src="./assets/img/colaggepaf1.png"  height="400" alt="colaggepaf1"/>
+<img src="./assets/img/colaggepaf2.png"  height="400" alt="colaggepaf2"/>
 
 ## Trello, Planificación de proyecto.
 
