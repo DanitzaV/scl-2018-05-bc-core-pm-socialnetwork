@@ -26,3 +26,23 @@ function facebookLoginWithFirebase(){
             console.log("Error de firebase > Mensaje > "+error.message); //error.message nos mostrará el mensaje de firebase del mismo error
         });
 }
+
+function googleLoginWithFirebase(){
+    const provider = new firebase.auth.GoogleAuthProvider();
+    firebase.auth().signInWithPopup(provider).then((result) => {
+        console.log(result);
+        const token =  result.credential.accessToken;
+        const user = result.user.displayName;
+        const fotouser = result.user.photoURL;
+        console.log('usuario: ' + user + ' toke: ' + token + ' foto url: ' + fotouser);
+        
+
+    }).catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        const email = email.error;
+        var credential = error.credential;
+
+    })
+  
+}
