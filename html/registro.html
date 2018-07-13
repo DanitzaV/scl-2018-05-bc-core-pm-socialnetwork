@@ -18,6 +18,9 @@
             </div>
             <div class="row">
                 <div class="col s12">
+                    <h5>Crea tu cuenta</h5>
+                </div>
+                <div class="col s12">
                     <div class="input-field col s6">
                         <input  id="first_name" type="text" class="validate">
                         <label for="first_name">Nombre</label>
@@ -29,7 +32,7 @@
                 </div>
                 <div class="input-field col s12">
                     <input id="email" type="email" class="validate">
-                    <label for="email">Email</label>
+                    <label for="email">Correo</label>
                 </div>
                 <div class="input-field col s12">
                     <input id="password" type="password" class="validate">
@@ -41,12 +44,25 @@
             </div>
         </section>
         
+<script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyAAOgh8YqK99YslqBc5OBu4DaLSkKKmu3I",
+    authDomain: "love-your-body.firebaseapp.com",
+    databaseURL: "https://love-your-body.firebaseio.com",
+    projectId: "love-your-body",
+    storageBucket: "",
+    messagingSenderId: "288945821020"
+  };
+  firebase.initializeApp(config);
+</script>
 
-        <script
-        src="https://code.jquery.com/jquery-3.3.1.min.js"
-        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-        crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
-        <script src="../assets/js/app.js"></script>
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+    <script src="../assets/js/app.js"></script>
     </body>
 </html>
