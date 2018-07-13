@@ -51,7 +51,6 @@ function googleLoginWithFirebase(){
   
 }
 
-
 // Registro de usuario
 function registerWithFirebase() {
     const emailValue = email.value;

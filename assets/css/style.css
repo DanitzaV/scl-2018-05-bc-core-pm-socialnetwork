@@ -23,3 +23,9 @@ body{
 .fa-google-plus-square{
     color: red;
 }
+#search{
+    width: 7em;
+}
+.vaku{
+    display: flex;
+}
