@@ -56,6 +56,9 @@ function getPhoto() {
 // agregamos en firebase un dominio autorizado , 127.0.0.1 es el 200 ok
 
 //Login con Facebook
+let usurio1;
+let img1;
+
 function facebookLoginWithFirebase(){
     const provider = new firebase.auth.FacebookAuthProvider(); // creamos un nuevo objeto 
 
@@ -80,25 +83,34 @@ function facebookLoginWithFirebase(){
 function googleLoginWithFirebase(){
     const provider = new firebase.auth.GoogleAuthProvider();
     firebase.auth().signInWithPopup(provider).then((result) => {
+
         console.log(result);
        
      const usuario = firebase.auth().currentUser;
      console.log(usuario);
         const token =  result.credential.accessToken;
-        const user = result.user.displayName;
-        const fotouser = result.user.photoURL;
-        console.log('usuario: ' + user + ' toke: ' + token + ' foto url: ' + fotouser);
+        usuario1 = result.user.displayName;
+        img1 = result.additionalUserInfo.profile.picture;
         
+       
+        console.log('usuario: ' + user + ' toke: ' + token + ' foto url: ' + fotouser);
+      
 
     }).catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
-        const email = email.error;
+   
         var credential = error.credential;
 
     })
   
 }
+
+//   function mostrarImgYNombre(nombre, img){
+//        console.log(nombre);
+//        console.log(img);
+      
+//   }
 
 
 // Registro de usuario
@@ -115,4 +127,7 @@ function registerWithFirebase() {
         console.log("Error de firebase > Mensaje > "+error.message);
      });
 }
+
+
+mostrarImgYNombre(usurio1,img1);
 
