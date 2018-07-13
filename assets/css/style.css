@@ -25,115 +25,73 @@ body{
 }
 #search{
     width: 7em;
- }
- .vaku{
+}
+.vaku{
     display: flex;
- }
- 
-
-/* Estilos generales */
-
-.center {
-	text-align: center;
 }
 
-/* Estilos Header */
-
-
-header div img {
-	width: 10em;
+.contAmigos {
+    background-color: #C2DEDA;
+    margin-top: 20px;
+    height: 400px;
 }
 
-/* Estilos imágen y su contenedor */
-
-.photo{
-	text-align: center;
+.fa-user-friends {
+    margin-top: 18px;
 }
 
-img{
-	width: 100%;
+.contadorDeAmigos {
+    height: 15px;
+    margin-top: 17px;
+    background-color: blueviolet;
 }
 
-.img {
-	text-align: center;
-	margin: 2em auto;
-	border: 5em solid #FFF;
-	box-shadow: 0 0 0.25em 0 rgba(50, 50, 50, 0.2);
+/* input[type=text] {
+    width: 130px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url('searchicon.png');
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
 }
 
-textarea {
-	width: 70%;
-	height: 4em;
-	color: #4E4D53;
-	font-size: 15px;
-	padding: 1em;
-	border-radius: 1em;
-	border: none;
-	margin: 0 auto;
-}
+input[type=text]:focus {
+    width: 100%;
+} */
 
-/* Estilos botón agregar */
-#btn {
-	background-color: rgb(124, 200, 202);
-	border-radius: 4px;
-	cursor: pointer;
-	text-align: center;
-	margin: 1em auto;
-	width: 130px;
-	height: 30px;
-	display: block;
-	color: #FFF;
-}
-
-#btn:hover {
-	background-color: #5590A6;
-}
-
-#btn:focus, textarea:focus{
-	outline: none;
-}
-
-/* Estilos contenedor comentarios */
-#cont {
-	border-radius: 0.4em;
-	margin: 0 auto;
-	color: #4E4D53;
-	text-align: left;
-	margin-bottom: 6em;
-	padding: 0 16%;
-}
-
-#cont span {
-	margin-left: 1em;
-}
-
-#cont div {
-	padding: 1em 0.5em;
-	margin-bottom: 2em;
-	outline: 0.1em solid #E5E3F2;
-	background-color: #FFF;
-}
-
-.heart, .trash {
-	margin:1em;
-	float: right;
-	cursor: pointer;
-}
-
-.trash:hover {
-	color: #1DA1F2;
-	cursor: pointer;
-}
-
-.strike-out {
-	text-decoration: line-through;
-	color: #1DA1F2;
-}
-
-.red {
-	color: #FC1E26;
-	cursor: pointer;
-}
+  /* label color */
+  .input-field label {
+    color: #000;
+  }
+  /* label focus color */
+  .input-field input[type=text]:focus + label {
+    color: #000;
+  }
+  /* label underline focus color */
+  .input-field input[type=text]:focus {
+    border-bottom: 1px solid #000;
+    box-shadow: 0 1px 0 0 #000;
+  }
+  /* valid color */
+  .input-field input[type=text].valid {
+    border-bottom: 1px solid #000;
+    box-shadow: 0 1px 0 0 #000;
+  }
+  /* invalid color */
+  .input-field input[type=text].invalid {
+    border-bottom: 1px solid #000;
+    box-shadow: 0 1px 0 0 #000;
+  }
+  /* icon prefix focus color */
+  #input:active {
+    border-bottom: 1px solid black;
+  }
 
 p {
 	display: inline-block;
