@@ -1,7 +1,4 @@
-// jquery materialize 
-// $(document).ready(function(){
-//     $('.sidenav').sidenav();
-//   });
+
 
 // creamos un nuevo objeto con firebase
 // utilizamos setcustomparametres , display popup, con eso le decimos  firebase que hagas el login con facebook en un popup
@@ -18,8 +15,12 @@ function facebookLoginWithFirebase(){
     });
 
     firebase.auth().signInWithPopup(provider)
-        .then(()=>{
+        .then((result)=>{
+            const usuario = result.user.displayName;
+            console.log(result);
+            console.log('usuario: ' + usuario)
             console.log("Login con facebook exitoso");
+
         })
         .catch((error)=>{
             console.log("Error de firebase > Código > "+error.code); //error.code nos mostrará el código de error para informarnos qué pasó
@@ -31,6 +32,9 @@ function googleLoginWithFirebase(){
     const provider = new firebase.auth.GoogleAuthProvider();
     firebase.auth().signInWithPopup(provider).then((result) => {
         console.log(result);
+       
+     const usuario = firebase.auth().currentUser;
+     console.log(usuario);
         const token =  result.credential.accessToken;
         const user = result.user.displayName;
         const fotouser = result.user.photoURL;
