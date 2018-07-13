@@ -21,10 +21,10 @@
         </div>
         <div class="row">
             <div class="col s12">
-                    <a class="waves-effect waves-light btn redSocial"><i class="fab fa-facebook-square left"></i>FACEBOOK</a>
+                    <a class="waves-effect waves-light btn redSocial" onclick="facebookLoginWithFirebase()"><i class="fab fa-facebook-square left"></i>FACEBOOK</a>
             </div>
             <div class="col s12">
-                    <a class="waves-effect waves-light btn redSocial"><i class="fab fa-google-plus-square left"></i>GOOGLE</a>
+                <a class="waves-effect waves-light btn redSocial" onclick="googleLoginWithFirebase()"><i class="fab fa-google-plus-square left"></i>GOOGLE</a>
             </div>
         </div>
         <div class="row">
@@ -39,7 +39,7 @@
                       
             <div class="col s12">
                     <a class="waves-effect waves-light btn redSocial">INICIAR SESION</a>
-                    <p>¿No tienes cuenta? <a href="">REGISTRATE</a></p>
+                    <p>¿No tienes cuenta? <a href="./html/registro.html">REGISTRATE</a></p>
             </div>            
                       
         </div>
@@ -47,7 +47,20 @@
 
     
 
-        
+      
+<script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyAAOgh8YqK99YslqBc5OBu4DaLSkKKmu3I",
+    authDomain: "love-your-body.firebaseapp.com",
+    databaseURL: "https://love-your-body.firebaseio.com",
+    projectId: "love-your-body",
+    storageBucket: "",
+    messagingSenderId: "288945821020"
+  };
+  firebase.initializeApp(config);
+</script>  
     <script
         src="https://code.jquery.com/jquery-3.3.1.min.js"
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="

@@ -9,7 +9,7 @@
             <link rel="stylesheet" href="../assets/css/style.css">
     </head>
     <body>
-        <section class="container">
+        <section class="container center-align">
             <div class="row">
                 <div class="col s12">
                     <img class="logo" src="../assets/img/queen.png" alt="">
@@ -18,49 +18,52 @@
             </div>
             <div class="row">
                 <div class="col s12">
+                    <h5>Crea tu cuenta</h5>
+                </div>
+                <div class="col s12">
                     <div class="input-field col s6">
                         <input  id="first_name" type="text" class="validate">
-                        <label for="first_name">First Name</label>
+                        <label for="first_name">Nombre</label>
                     </div>
                     <div class="input-field col s6">
                         <input id="last_name" type="text" class="validate">
-                        <label for="last_name">Last Name</label>
+                        <label for="last_name">Apellido</label>
                     </div>
                 </div>
                 <div class="input-field col s12">
                     <input id="email" type="email" class="validate">
-                    <label for="email">Email</label>
+                    <label for="email">Correo</label>
                 </div>
                 <div class="input-field col s12">
                     <input id="password" type="password" class="validate">
-                    <label for="password">Password</label>
+                    <label for="password">Contraseña</label>
+                </div>
+                <div class="col s12">
+                    <a class="waves-effect waves-light btn-large" onclick="registerWithFirebase()">Registrar</a>
                 </div>
             </div>
         </section>
+        
+<script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyAAOgh8YqK99YslqBc5OBu4DaLSkKKmu3I",
+    authDomain: "love-your-body.firebaseapp.com",
+    databaseURL: "https://love-your-body.firebaseio.com",
+    projectId: "love-your-body",
+    storageBucket: "",
+    messagingSenderId: "288945821020"
+  };
+  firebase.initializeApp(config);
+</script>
 
-               <!-- <nav> 
-                <ul id="slide-out" class="sidenav">
-                        <li><div class="user-view">
-                          <div class="background">
-                            <img src="images/office.jpg">
-                          </div>
-                          <a href="#user"><img class="circle" src="images/yuna.jpg"></a>
-                          <a href="#name"><span class="white-text name">John Doe</span></a>
-                          <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
-                        </div></li>
-                        <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
-                        <li><a href="#!">Second Link</a></li>
-                        <li><div class="divider"></div></li>
-                        <li><a class="subheader">Subheader</a></li>
-                        <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
-                      </ul>
-                      <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-        </nav> -->
-            <script
-            src="https://code.jquery.com/jquery-3.3.1.min.js"
-            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-            crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
-        <script src="../assets/js/app.js"></script>
+
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+    <script src="../assets/js/app.js"></script>
     </body>
 </html>
