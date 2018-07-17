@@ -90,12 +90,6 @@ function registerWithFirebase() {
         console.log("Error de firebase > Mensaje > "+error.message);
      });
 }
-
-
-
-
-  
-
    // Muro-> Opcion postear
    
     const boton = document.getElementById('btn');

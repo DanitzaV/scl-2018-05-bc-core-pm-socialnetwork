@@ -16,6 +16,8 @@ $(document).ready(function(){
     imge.setAttribute('src', img);
     imge.className = 'imgusuario';
    
+
+    
    
     contenedor.appendChild(imge);
     p.appendChild(textop);
