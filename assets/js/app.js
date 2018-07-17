@@ -96,7 +96,7 @@ function registerWithFirebase() {
 
   
 
-    Muro-> Opcion postear
+   // Muro-> Opcion postear
    
     const boton = document.getElementById('btn');
     boton.addEventListener('click', () => { 
