@@ -35,7 +35,9 @@ function facebookLoginWithFirebase(){
             console.log('usuario: ' + usuario)
             console.log("Login con facebook exitoso");
 
-            
+
+
+
         })
         .catch((error)=>{
             console.log("Error de firebase > Código > "+error.code); //error.code nos mostrará el código de error para informarnos qué pasó
