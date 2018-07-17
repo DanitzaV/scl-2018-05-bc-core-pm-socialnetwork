@@ -45,6 +45,10 @@ body{
     margin-top: 17px;
     background-color: blueviolet;
 }
+.imgusuario {
+    width: 45%;
+    border-radius: 50%
+}
 
 /* input[type=text] {
     width: 130px;
