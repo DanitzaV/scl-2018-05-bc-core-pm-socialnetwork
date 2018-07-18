@@ -23,6 +23,7 @@ window.onload = () => {
 // let img1;
 
 
+
 function facebookLoginWithFirebase(){
     const provider = new firebase.auth.FacebookAuthProvider(); // creamos un nuevo objeto 
 
@@ -35,6 +36,7 @@ function facebookLoginWithFirebase(){
             const usuario = result.user.displayName;
             location = '../../html/perfil.html';
             console.log(result);
+
             console.log('usuario: ' + usuario)
             console.log("Login con facebook exitoso");
 
