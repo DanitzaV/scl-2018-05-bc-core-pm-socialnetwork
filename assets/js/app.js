@@ -1,54 +1,17 @@
-
- //jquery materialize 
-$(document).ready(function(){
-     $('.sidenav').sidenav();
-   });
-
-   //Muro-> Opcion postear
-   
-   const boton = document.getElementById('btn');
-boton.addEventListener('click', () => { 
-    let comments = document.getElementById('comment').value;
-    if(comments = "" )
-    document.getElementById('comment').value = '';
-    const cont = document.getElementById('cont');
-    const newComments = document.createElement('div');
-    const chck = document.createElement('input');
-    chck.type = 'checkbox';
-    const heart = document.createElement('i');
-    heart.classList.add('fa', 'fa-heart', 'heart');
-    const trash = document.createElement('i');
-    trash.classList.add('fa', 'fa-trash', 'trash');
-    const contenedorElemento = document.createElement('p');
-    let textNewComment = document.createTextNode(comments);
-    contenedorElemento.appendChild(textNewComment);
-    newComments.appendChild(chck);
-    newComments.appendChild(heart);
-    newComments.appendChild(trash);
-    newComments.appendChild(contenedorElemento);
-    cont.appendChild(newComments);
-
-    heart.addEventListener('click', ()=> {
-        heart.classList.toggle('red');
-    })
-    trash.addEventListener('click', ()=> {
-        cont.removeChild(newComments);
-    })
-    chck.addEventListener('click', ()=> {
-        contenedorElemento.classList.toggle('strike-out');
-    })
-}) 
-
-// Muro -> Subir foto
-function getPhoto() {
-    let fotoUsuario = document.getElementById("photo").value;
-    console.log(fotoUsuario);
+window.onload = () => {
+    
+    firebase.auth().onAuthStateChanged((user)=>{
+        if(user){ //Si está logeado, mostraremos la opción loggedIn
+            console.log(user)
+            let usuario1 = user.displayName;
+             let img1 = user.photoURL;
+            mostrarImgYNombre(usuario1,img1);
+            
+          
+        }
+    });
 }
-
-
-
-
-
+    
 // creamos un nuevo objeto con firebase
 // utilizamos setcustomparametres , display popup, con eso le decimos  firebase que hagas el login con facebook en un popup
 // ahora llamamos a firebase.auth , utilizamos singwithpopup, introducimos el provider y luego esa funcion retorna una promesa
@@ -56,8 +19,9 @@ function getPhoto() {
 // agregamos en firebase un dominio autorizado , 127.0.0.1 es el 200 ok
 
 //Login con Facebook
-let usurio1;
-let img1;
+// let usurio1;
+// let img1;
+
 
 function facebookLoginWithFirebase(){
     const provider = new firebase.auth.FacebookAuthProvider(); // creamos un nuevo objeto 
@@ -69,6 +33,7 @@ function facebookLoginWithFirebase(){
     firebase.auth().signInWithPopup(provider)
         .then((result)=>{
             const usuario = result.user.displayName;
+            location = '../../html/perfil.html';
             console.log(result);
             console.log('usuario: ' + usuario)
             console.log("Login con facebook exitoso");
@@ -82,18 +47,18 @@ function facebookLoginWithFirebase(){
 
 function googleLoginWithFirebase(){
     const provider = new firebase.auth.GoogleAuthProvider();
-    firebase.auth().signInWithPopup(provider).then((result) => {
-
-        console.log(result);
-       
-     const usuario = firebase.auth().currentUser;
-     console.log(usuario);
+    firebase.auth().signInWithPopup(provider).then((result) => {    
+    //     console.log(result);
+    location = '../../html/perfil.html' //Url aqui
+    //  const usuario = firebase.auth().currentUser;
+    //  console.log(usuario);
         const token =  result.credential.accessToken;
-        usuario1 = result.user.displayName;
-        img1 = result.additionalUserInfo.profile.picture;
         
        
+        // location.href = '../../html/perfil.html';
+        
         console.log('usuario: ' + user + ' toke: ' + token + ' foto url: ' + fotouser);
+       
       
 
     }).catch((error) => {
@@ -105,6 +70,7 @@ function googleLoginWithFirebase(){
     })
   
 }
+
 
 //   function mostrarImgYNombre(nombre, img){
 //        console.log(nombre);
@@ -127,7 +93,44 @@ function registerWithFirebase() {
         console.log("Error de firebase > Mensaje > "+error.message);
      });
 }
-
-
-mostrarImgYNombre(usurio1,img1);
+   // Muro-> Opcion postear
+   
+    const boton = document.getElementById('btn');
+    boton.addEventListener('click', () => { 
+        let comments = document.getElementById('comment').value;
+        if(comments = "" )
+        document.getElementById('comment').value = '';
+        const cont = document.getElementById('cont');
+        const newComments = document.createElement('div');
+        const chck = document.createElement('input');
+        chck.type = 'checkbox';
+        const heart = document.createElement('i');
+        heart.classList.add('fa', 'fa-heart', 'heart');
+        const trash = document.createElement('i');
+        trash.classList.add('fa', 'fa-trash', 'trash');
+        const contenedorElemento = document.createElement('p');
+        let textNewComment = document.createTextNode(comments);
+        contenedorElemento.appendChild(textNewComment);
+        newComments.appendChild(chck);
+        newComments.appendChild(heart);
+        newComments.appendChild(trash);
+        newComments.appendChild(contenedorElemento);
+        cont.appendChild(newComments);
+    
+        heart.addEventListener('click', ()=> {
+            heart.classList.toggle('red');
+        })
+        trash.addEventListener('click', ()=> {
+            cont.removeChild(newComments);
+        })
+        chck.addEventListener('click', ()=> {
+            contenedorElemento.classList.toggle('strike-out');
+        })
+    }) 
+    
+    // Muro -> Subir foto
+    function getPhoto() {
+        let fotoUsuario = document.getElementById("photo").value;
+        console.log(fotoUsuario);
+    }
 
