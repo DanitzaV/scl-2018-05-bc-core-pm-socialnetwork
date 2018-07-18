@@ -7,9 +7,8 @@ $(document).ready(function(){
    //Muro-> Opcion postear
    
    const boton = document.getElementById('btn');
-boton.addEventListener('click', () => { 
+boton.addEventListener('click', () => {
     let comments = document.getElementById('comment').value;
-    if(comments = "" )
     document.getElementById('comment').value = '';
     const cont = document.getElementById('cont');
     const newComments = document.createElement('div');
@@ -17,12 +16,17 @@ boton.addEventListener('click', () => {
     chck.type = 'checkbox';
     const heart = document.createElement('i');
     heart.classList.add('fa', 'fa-heart', 'heart');
+
+    //const like = document.createElement('i');
+    //like.classList.add('far fa-thumbs-up');
+
     const trash = document.createElement('i');
     trash.classList.add('fa', 'fa-trash', 'trash');
     const contenedorElemento = document.createElement('p');
     let textNewComment = document.createTextNode(comments);
     contenedorElemento.appendChild(textNewComment);
     newComments.appendChild(chck);
+    //newComments.appendChild(like);
     newComments.appendChild(heart);
     newComments.appendChild(trash);
     newComments.appendChild(contenedorElemento);
@@ -34,19 +38,73 @@ boton.addEventListener('click', () => {
     trash.addEventListener('click', ()=> {
         cont.removeChild(newComments);
     })
+
+    /*like.addEventListener('click', ()=> {
+     contadorLike();
+    })*/
+
     chck.addEventListener('click', ()=> {
         contenedorElemento.classList.toggle('strike-out');
     })
 }) 
+//Muro-> Opcion subir foto
 
-// Muro -> Subir foto
+/*function getPhoto() {
+photoUser = document.getElementById("photo").value;
+console.log(photoUser)
+}*/
 function getPhoto() {
-    let fotoUsuario = document.getElementById("photo").value;
-    console.log(fotoUsuario);
+    var inputFile = document.getElementById('photo').value;
+    console.log(inputFile);
+    inputFile.addEventListener('change', printPhoto, false);
+  }
+  
+  function printPhoto(event) {
+    var file = event.target.files[0];
+    var reader = new FileReader();
+    reader.onload = function(event) {
+      var img = document.getElementById('photoUser');
+      img.src= event.target.result;
+    }
+    reader.readAsDataURL(file);
+  }
+  
+  //window.addEventListener('load', init, false);
+
+//Muro-> Guardar mensajes posteados y mostrarlos en pantalla al momento de cargar la página.
+
+function sendPost(){
+    const currentUser = firebase.auth().currentUser;
+    const postTextArea = document.getElementById("comment").value;
+    console.log(postTextArea);
+
+    const newPostKey = firebase.database().ref().child('posts').push().key;
+
+    firebase.database().ref(`posts/${newPostKey}`).set({
+        creator : currentUser.uid,
+        creatorName : currentUser.displayName,
+        text : postTextArea
+    });
 }
 
+//Muro-> Contador de likes
 
+/*function contadorLike() {
+    
+}
+*/
 
+//window.onload = ()=>{
+
+//firebase.database().ref('posts')
+
+       /* .on('child_added', (newMessage)=>{
+            postContainer.innerHTML += `
+                <p>Nombre : ${newMessage.val().creatorName}</p>
+                <p>${newMessage.val().text}</p>
+            `;
+        });
+//}; */
 
 
 // creamos un nuevo objeto con firebase
@@ -127,6 +185,8 @@ function registerWithFirebase() {
         console.log("Error de firebase > Mensaje > "+error.message);
      });
 }
+
+
 
 
 mostrarImgYNombre(usurio1,img1);
