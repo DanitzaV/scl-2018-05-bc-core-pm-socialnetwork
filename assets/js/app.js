@@ -1,7 +1,8 @@
-
-     
-      firebase.auth().onAuthStateChanged((user)=>{
+window.onload = () => {
+    
+    firebase.auth().onAuthStateChanged((user)=>{
         if(user){ //Si está logeado, mostraremos la opción loggedIn
+            console.log(user)
             let usuario1 = user.displayName;
              let img1 = user.photoURL;
             mostrarImgYNombre(usuario1,img1);
@@ -9,6 +10,8 @@
           
         }
     });
+}
+    
 // creamos un nuevo objeto con firebase
 // utilizamos setcustomparametres , display popup, con eso le decimos  firebase que hagas el login con facebook en un popup
 // ahora llamamos a firebase.auth , utilizamos singwithpopup, introducimos el provider y luego esa funcion retorna una promesa

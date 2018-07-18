@@ -46,7 +46,22 @@ body{
     background-color: blueviolet;
 }
 .imgusuario {
-    width: 45%;
+    margin-top: 2em;
+    width: 35%;
+    border-radius: 50%
+}
+.imgnavbar{
+    margin-top: 1em;
+    margin-left: 3em;
+    width: 28%;
+    border-radius: 50%
+}
+.texto {
+    background-color: aliceblue;
+}
+.imgpost {
+    margin-top: 1em;
+    width: 24%;
     border-radius: 50%
 }
 
