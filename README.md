@@ -15,9 +15,9 @@ Un emprendedor muy visionario nos ha encargado crear una red social. No nos da m
 
 ## Introducción
 
-¿Te gusta verte bien? pero ¿te cuesta encontrar ropa adecuada a tu cuerpo y estilo? ¿crees que solo a ti te pasa? ¿te sientes diferente a l@s demás?
+¿Te gusta verte bien?, pero ¿te cuesta encontrar ropa adecuada a tu cuerpo y estilo?, ¿crees que solo a ti te pasa?, ¿te sientes diferente a l@s demás?.
 
-Muchas mujeres sienten que es una odisea poder quedar encontrar vestimenta a su medida y a su estilo. o les apena ser catalogadas de descuidadas con su alimentación por su contextura física. Si eres parte de este grupo tranquila, aquí te presentamos nuestro nuestro proyecto que te ayudrá a sentirte mejor.
+Muchas mujeres sienten que es una odisea poder encontrar vestimenta a su medida y a su estilo o les apena ser catalogadas de descuidadas con su alimentación por su contextura física. Si eres parte de este grupo, ¡tranquila!, aquí te presentamos nuestro nuestro proyecto que te ayudrá a sentirte mejor.
 
 Somos Valeria, Viviana, Loreto y Javiera y queremos dar solución a tu problema.
 
@@ -28,7 +28,7 @@ Por medio de la interacción social podrás:
 
 - Sentirte segura con tu cuerpo.
 - Tener una red de apoyo (Recuerda que no eres la única).
-- Encontrar datos interesantes de tiendas maravillosas que te ofrecen      ropa a tu medida y estilo.
+- Encontrar datos interesantes de tiendas maravillosas que te ofrecen ropa a tu medida y estilo.
 - Asistir a eventos interesantes de tu interés.
 - Recibir tips de alimentación saudable.
 
@@ -36,27 +36,28 @@ Si eres parte de nuestra red social **Love Your Body** no te sentirás sola, y e
 
 Ésta red social fue creada para mujeres y por mujeres que entienden a fondo tus precupaciones y te harán sentir única, con una autoestima equilibrada y feliz.
 
-Si quieres ser parte de esta red social de mujeres positivas, Únete!!
+Si quieres ser parte de esta red social de mujeres positivas, ¡¡Únete!!
 
 ## Encuesta de filtro
 
-Para poder recolectar datos de mujeres que utilizan redes sociales y les parece genial la idea de una red social feminista realizamos la siguiente encuesta.
-
-<img src="./assets/img/encuesta.png"  height="400" alt="encuesta"/>
-<img src="./assets/img/encuesta2.png"  height="400" alt="encuesta2"/>
+Para poder recolectar datos de mujeres que utilizan redes sociales y les parece genial la idea de una red social feminista realizamos la siguiente [encuesta](https://docs.google.com/forms/d/1B10t5WldS45tn4FhnQ9CvnqntROaWT11afp0oG00U0w/edit).
 
 ### Resultados obtenidos en encuesta de filtro
 
-<img src="./assets/img/1.png"  height="400" alt="1"/>
-<img src="./assets/img/2.png"  height="400" alt="2"/>
-<img src="./assets/img/3.png"  height="400" alt="3"/>
-<img src="./assets/img/4.png"  height="400" alt="4"/>
-<img src="./assets/img/5.png"  height="400" alt="5"/>
-<img src="./assets/img/6.png"  height="400" alt="6"/>
-<img src="./assets/img/7.png"  height="400" alt="7"/>
-<img src="./assets/img/8.png"  height="400" alt="8"/>
+En esta [presentación](https://docs.google.com/presentation/d/1KhISD_CLso20oPm-nvypFIpBBbb7D-qv3R-8sdCNvcI/edit#slide=id.p) podrás ver el resultado de la encuesta mostrada en gráficos. Y también podras ver en las últimas diapositivas cada una de la opiniones de la imagen que representa el movimiento "the body positive".
 
 ### Conclusion obtenida
+
+Hemos hecho esta encuesta de filtro con la finalidad de poder seleccionar, identificar, indagar y conocer sobre quienes serán los futuros usuarios. A partir de las 67 personas encuestadas, se pudo obtener como resultado varios datos, como el rango de edades , cuántas personas utilizan ciertas redes sociales, cuáles son las redes sociales más utilizadas y qué emociones les genera una imagen que representa el movimiento “body positive”.
+
+En la encuesta realizada se puede concluir que la mayoría de los encuestados tiene una rango de edad entre 26 a 35 años con un 47,8%; en segundo lugar están las personas con rango de edad entre 18 a 25 años con un 29.9% de encuestados; Las personas con 47 años o más ocupan el 19.4% de encuestados, dejándolos en tercer lugar; Y por último se encuentran las personas entre 36 a 46 años que ocupa el 3% de encuestados.
+
+Respecto a las personas que usan redes sociales, solo una persona respondió que no utiliza redes sociales. Las redes sociales más populares entre los que sí usan, son Facebook, YouTube, Instagram y Slack en este orden.
+
+La imagen mostrada en la encuesta tuvo diversas opiniones y emociones en nuestros encuestados. Empero la gran mayoría tuvo buenos comentarios. Algunos de los comentarios que más se repiten son: alegría, diversidad, igualdad, aceptación, emoción, seguridad, etc. 
+
+Por consiguiente nos sentimos emocionadas por la actitud que tomaron las personas encuestadas, puesto que tenemos la seguridad de que la red social que vamos a elaborar tendrá éxito debido a la opinión que se genera a partir de las emociones que genera el movimiento “the body positive”.
+
 
 ## Prototipo de Baja fidelidad
 

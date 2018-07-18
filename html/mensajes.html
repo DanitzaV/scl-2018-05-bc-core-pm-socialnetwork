@@ -1,0 +1,82 @@
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <meta http-equiv="X-UA-Compatible" content="ie=edge">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+            <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+            <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css?family=Berkshire+Swash" rel="stylesheet">
+            <link rel="stylesheet" href="../assets/css/style.css">
+    
+</head>
+<body>
+        <nav class="teal lighten-4" >
+                <ul id="slide-out" class="sidenav lighten-4">
+                        <li class="lighten-4"><div class= "teal lighten-4">
+                          <div class="background  lighten-4">
+                            <img class="logo" src="../assets/img/queen.png">
+                          </div>
+                          
+                          <a href="#name"><span class="white-text name">John Doe</span></a>
+                          <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
+                        </div></li>
+                        <li class="lighten-4"><a href="../html/mensajes.html"><i class="material-icons">chat</i>Foros</a></li>
+                        <li><div class="divider"></div></li>
+                        <li><a href="#!"><i class="material-icons">group</i>Amigos</a></li>
+                        <li><div class="divider"></div></li>
+                        <li><a href="#!"><i class="material-icons">event</i>Eventos</a></li>
+                        <li><div class="divider"></div></li>
+                        <li><a href="#!"><i class="material-icons">store</i>Tiendas</a></li>
+                        <li><div class="divider"></div></li>
+                        <br>
+                        <br>
+                        <li><div class="divider"></div></li>
+                        <li onclick="cerrar_sesion()"><a href="#!"><i class="material-icons">arrow_back</i>Salir</a></li>
+                        </ul>
+                      <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                     <div class="col s4 inputBuscardor">
+                            <i class="material-icons">search</i>
+                            <input type="search" name="" id="search">
+                            <div id="imguser">
+                             
+                              </div>
+                     </div> 
+                     <!-- <div class="col s2">
+                           <div id="imguser">
+    
+                           </div>
+                     </div>     -->
+        </nav>
+
+
+        <div>
+                <div id="messageContainer">
+    
+                    </div>
+                <input id="messageArea" type="text">
+                <input id="sendButton" type="button" value="SEND" onclick="sendMessage()">
+                
+            </div>
+        <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+        <script>
+          // Initialize Firebase
+          var config = {
+            apiKey: "AIzaSyAAOgh8YqK99YslqBc5OBu4DaLSkKKmu3I",
+            authDomain: "love-your-body.firebaseapp.com",
+            databaseURL: "https://love-your-body.firebaseio.com",
+            projectId: "love-your-body",
+            storageBucket: "",
+            messagingSenderId: "288945821020"
+          };
+          firebase.initializeApp(config);
+        </script> 
+ <script
+ src="https://code.jquery.com/jquery-3.3.1.min.js"
+ integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+ crossorigin="anonymous"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+    <script src="../assets/js/mensajes.js"></script>
+    <script src="../assets/js/perfil.js"></script>
+    <script src="../assets/js/app.js"></script>
+</body>
+</html>

@@ -26,7 +26,7 @@ body{
 #search{
     width: 7em;
 }
-.vaku{
+.inputBuscardor{
     display: flex;
 }
 
@@ -44,6 +44,25 @@ body{
     height: 15px;
     margin-top: 17px;
     background-color: blueviolet;
+}
+.imgusuario {
+    margin-top: 2em;
+    width: 35%;
+    border-radius: 50%
+}
+.imgnavbar{
+    margin-top: 1em;
+    margin-left: 3em;
+    width: 28%;
+    border-radius: 50%
+}
+.texto {
+    background-color: aliceblue;
+}
+.imgpost {
+    margin-top: 1em;
+    width: 24%;
+    border-radius: 50%
 }
 
 /* input[type=text] {
