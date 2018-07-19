@@ -58,6 +58,15 @@ La imagen mostrada en la encuesta tuvo diversas opiniones y emociones en nuestro
 
 Por consiguiente nos sentimos emocionadas por la actitud que tomaron las personas encuestadas, puesto que tenemos la seguridad de que la red social que vamos a elaborar tendrá éxito debido a la opinión que se genera a partir de las emociones que genera el movimiento “the body positive”.
 
+## Entrevistas
+
+Entrevistas que realizadas por Javiera Sereño:
+
+Entrevistada 1: Sandra [Escucha aquí la entrevista1] 
+(https://drive.google.com/file/d/1NBpG7EPOXmT5Lo8cEn1qns5XFlaplz1B/view?usp=drivesdk)
+
+Entrevistada 2: Ximena [Escucha aquí la entrevista]
+(https://drive.google.com/file/d/130gnKMifp9P1qZepcMuUDJAL_vRNV0ke/view?usp=drivesdk)
 
 ## Prototipo de Baja fidelidad
 
