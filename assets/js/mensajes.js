@@ -8,12 +8,17 @@
         .catch(()=>{
 
         });
-
+        // var imagesRef = storageRef.child('images').limitToLast(2).on('child_added', (newimg) => {
+    
+        // } )
+       
     //Acá comenzamos a escuchar por nuevos mensajes usando el evento
     //on child_added
     firebase.database().ref('messages')
-    .limitToLast(4)
+    .limitToLast(3)
     .on('child_added', (newMessage)=>{
+
+        
         
     
         // let img;
@@ -59,7 +64,7 @@
         // console.log(newMessage.val().text)
         
     });
-
+ 
 
    
 
@@ -78,4 +83,47 @@ function sendMessage(){
         creatorImg: currentUser.photoURL,
         text : messageAreaText
     });
+
+}
+
+
+// function sendGif(){
+//     const gifValue = gifArea.value;
+
+//     const newGifKey = firebase.database().ref().child("gifs").push().key; //key permite que se generen llaves nuevas para guardar los gifs 
+//     const currentUser = firebase.auth().currentUser; //Si estamos logueados, siempre podremos acceder a los datos, en este caso, a los gifs
+//     firebase.database().ref(`gifs/${newGifKey}`).set({
+//         gifURL : gifValue, 
+//         creatorName : currentUser.displayName || //Si esto está null o undefined, sigue con la opción que le sigue "||"
+//                         currentUser.providerData[0].email,
+//         creator : currentUser.uid
+//     });
+// }
+function sendPhotoToStorage(){
+    const photoFile = photoFileSelector.files[0];
+    const fileName = photoFile.name; // nombre del archivo, sirve para armar la ruta
+    const metadata = { // datos sobre el archivo que estamos subiendo
+        contentType : photoFile.type// tipo de archivo que estamos subiendo
+    };
+    // va a retornar una tarea= task (objeto)
+    
+    const task = firebase.storage().ref('images') //Corresponden a las carpetas que tenemos dentro del storage
+        .child(fileName)
+        .put(photoFile, metadata);
+ 
+    task.then(snapshot => snapshot.ref.getDownloadURL())  //obtenemos la url de descarga (de la imagen)
+        .then(ur => {
+            const currentUser = firebase.auth().currentUser;
+            messageContainer.innerHTML += `
+            <img style="width: 25%; display: flex" src="${currentUser.photoURL}">
+            <p> ${currentUser.displayName}</p>
+            <img style="width: 200px; display: flex" src="${ur}">
+            
+        `;
+        
+    
+    
+        });
+        
+    
 }

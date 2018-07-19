@@ -23,6 +23,7 @@ window.onload = () => {
 // let img1;
 
 
+
 function facebookLoginWithFirebase(){
     const provider = new firebase.auth.FacebookAuthProvider(); // creamos un nuevo objeto 
 
@@ -35,6 +36,7 @@ function facebookLoginWithFirebase(){
             const usuario = result.user.displayName;
             location = '../../html/perfil.html';
             console.log(result);
+
             console.log('usuario: ' + usuario)
             console.log("Login con facebook exitoso");
 
@@ -136,4 +138,52 @@ function registerWithFirebase() {
         let fotoUsuario = document.getElementById("photo").value;
         console.log(fotoUsuario);
     }
+
+    function printPhoto(event) {
+        var file = event.target.files[0];
+        var reader = new FileReader();
+        reader.onload = function(event) {
+          var img = document.getElementById('photoUser');
+          img.src= event.target.result;
+        }
+        reader.readAsDataURL(file);
+      }
+      
+      //window.addEventListener('load', init, false);
+    
+    //Muro-> Guardar mensajes posteados y mostrarlos en pantalla al momento de cargar la página.
+    
+    function sendPost(){
+        const currentUser = firebase.auth().currentUser;
+        const postTextArea = document.getElementById("comment").value;
+        console.log(postTextArea);
+    
+        const newPostKey = firebase.database().ref().child('posts').push().key;
+    
+        firebase.database().ref(`posts/${newPostKey}`).set({
+            creator : currentUser.uid,
+            creatorName : currentUser.displayName,
+            text : postTextArea
+        });
+    }
+    
+    //Muro-> Contador de likes
+    
+    /*function contadorLike() {
+        
+    }
+    */
+    
+    //window.onload = ()=>{
+    
+    //firebase.database().ref('posts')
+    
+           /* .on('child_added', (newMessage)=>{
+                postContainer.innerHTML += `
+                    <p>Nombre : ${newMessage.val().creatorName}</p>
+                    <p>${newMessage.val().text}</p>
+                `;
+            });
+    //}; */
+
 
