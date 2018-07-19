@@ -1,17 +1,12 @@
-window.onload = () => {
-    
-    firebase.auth().onAuthStateChanged((user)=>{
-        if(user){ //Si está logeado, mostraremos la opción loggedIn
-            console.log(user)
-            let usuario1 = user.displayName;
-             let img1 = user.photoURL;
-            mostrarImgYNombre(usuario1,img1);
-            
-          
-        }
-    });
-}
-    
+
+ //jquery materialize 
+$(document).ready(function(){
+     $('.sidenav').sidenav();
+   });
+
+  
+
+
 // creamos un nuevo objeto con firebase
 // utilizamos setcustomparametres , display popup, con eso le decimos  firebase que hagas el login con facebook en un popup
 // ahora llamamos a firebase.auth , utilizamos singwithpopup, introducimos el provider y luego esa funcion retorna una promesa
@@ -98,92 +93,6 @@ function registerWithFirebase() {
         console.log("Error de firebase > Mensaje > "+error.message);
      });
 }
-   // Muro-> Opcion postear
+
    
-    const boton = document.getElementById('btn');
-    boton.addEventListener('click', () => { 
-        let comments = document.getElementById('comment').value;
-        if(comments = "" )
-        document.getElementById('comment').value = '';
-        const cont = document.getElementById('cont');
-        const newComments = document.createElement('div');
-        const chck = document.createElement('input');
-        chck.type = 'checkbox';
-        const heart = document.createElement('i');
-        heart.classList.add('fa', 'fa-heart', 'heart');
-        const trash = document.createElement('i');
-        trash.classList.add('fa', 'fa-trash', 'trash');
-        const contenedorElemento = document.createElement('p');
-        let textNewComment = document.createTextNode(comments);
-        contenedorElemento.appendChild(textNewComment);
-        newComments.appendChild(chck);
-        newComments.appendChild(heart);
-        newComments.appendChild(trash);
-        newComments.appendChild(contenedorElemento);
-        cont.appendChild(newComments);
-    
-        heart.addEventListener('click', ()=> {
-            heart.classList.toggle('red');
-        })
-        trash.addEventListener('click', ()=> {
-            cont.removeChild(newComments);
-        })
-        chck.addEventListener('click', ()=> {
-            contenedorElemento.classList.toggle('strike-out');
-        })
-    }) 
-    
-    // Muro -> Subir foto
-    function getPhoto() {
-        let fotoUsuario = document.getElementById("photo").value;
-        console.log(fotoUsuario);
-    }
-
-    function printPhoto(event) {
-        var file = event.target.files[0];
-        var reader = new FileReader();
-        reader.onload = function(event) {
-          var img = document.getElementById('photoUser');
-          img.src= event.target.result;
-        }
-        reader.readAsDataURL(file);
-      }
-      
-      //window.addEventListener('load', init, false);
-    
-    //Muro-> Guardar mensajes posteados y mostrarlos en pantalla al momento de cargar la página.
-    
-    function sendPost(){
-        const currentUser = firebase.auth().currentUser;
-        const postTextArea = document.getElementById("comment").value;
-        console.log(postTextArea);
-    
-        const newPostKey = firebase.database().ref().child('posts').push().key;
-    
-        firebase.database().ref(`posts/${newPostKey}`).set({
-            creator : currentUser.uid,
-            creatorName : currentUser.displayName,
-            text : postTextArea
-        });
-    }
-    
-    //Muro-> Contador de likes
-    
-    /*function contadorLike() {
-        
-    }
-    */
-    
-    //window.onload = ()=>{
-    
-    //firebase.database().ref('posts')
-    
-           /* .on('child_added', (newMessage)=>{
-                postContainer.innerHTML += `
-                    <p>Nombre : ${newMessage.val().creatorName}</p>
-                    <p>${newMessage.val().text}</p>
-                `;
-            });
-    //}; */
-
 
