@@ -47,29 +47,31 @@
                            </div>
                      </div>     -->
         </nav>
-
+        
 
         <div>
                 <div id="messageContainer">
     
                     </div>
+                <div id="contenedorbtn">    
                 <input id="messageArea" type="text">
-                <input id="sendButton" type="button" value="SEND" onclick="sendMessage()">
-                
-            </div>
-        <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
-        <script>
-          // Initialize Firebase
-          var config = {
-            apiKey: "AIzaSyAAOgh8YqK99YslqBc5OBu4DaLSkKKmu3I",
-            authDomain: "love-your-body.firebaseapp.com",
-            databaseURL: "https://love-your-body.firebaseio.com",
-            projectId: "love-your-body",
-            storageBucket: "",
-            messagingSenderId: "288945821020"
-          };
-          firebase.initializeApp(config);
-        </script> 
+                <input  class="btn" id="sendButton" type="button" value="SEND" onclick="sendMessage()">
+                <input id="photoFileSelector" type="file"> <input id="sendPhoto" type="button" onclick="sendPhotoToStorage()" value="SEND PHOTO">
+                </div> 
+        </div>   
+            <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+            <script>
+              // Initialize Firebase
+              var config = {
+                apiKey: "AIzaSyAAOgh8YqK99YslqBc5OBu4DaLSkKKmu3I",
+                authDomain: "love-your-body.firebaseapp.com",
+                databaseURL: "https://love-your-body.firebaseio.com",
+                projectId: "love-your-body",
+                storageBucket: "love-your-body.appspot.com",
+                messagingSenderId: "288945821020"
+              };
+              firebase.initializeApp(config);
+            </script>
  <script
  src="https://code.jquery.com/jquery-3.3.1.min.js"
  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
