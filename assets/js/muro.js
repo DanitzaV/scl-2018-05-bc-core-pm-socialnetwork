@@ -32,7 +32,7 @@ function sendPost(){
 };
 
 // Muro -> Subir foto
-
+/*
 function sendPhotoToStorage(){
     const photoFile = photoFileSelector.files[0];
     const fileName = photoFile.name; // nombre del archivo, sirve para armar la ruta
@@ -49,7 +49,7 @@ function sendPhotoToStorage(){
             console.log("URL del archivo > "+url);
         });
     }
-
+*/
 //Muro-> Contador de likes
 /*
 // counters/${ID}
