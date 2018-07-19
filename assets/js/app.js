@@ -23,7 +23,7 @@ function facebookLoginWithFirebase(){
     const provider = new firebase.auth.FacebookAuthProvider(); // creamos un nuevo objeto 
 
     provider.setCustomParameters({ // le decimos que haga un login con facebook y enlace un popup
-        'display' : 'popup'
+        'display' : 'popup',
     });
 
     firebase.auth().signInWithPopup(provider)
