@@ -276,3 +276,7 @@ p {
     padding: 20px;
 }
 
+.shopImg{
+    height: 10em;
+    border: 1px solid black;
+}

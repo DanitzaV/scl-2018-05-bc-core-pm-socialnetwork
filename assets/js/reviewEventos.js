@@ -16,7 +16,8 @@ firebase.database().ref('event')
     divImgTienda.classList.add("col", "m3");
 
     let tiendaImg = document.createElement("image")
-    tiendaImg.setAttribute('src', '');
+    tiendaImg.style.height = '10em';
+    tiendaImg.setAttribute('src', newReview.val().imagenTienda);
 
     divImgTienda.appendChild(tiendaImg);
 
