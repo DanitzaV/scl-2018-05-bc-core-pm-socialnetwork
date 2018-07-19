@@ -18,6 +18,7 @@ function saveReview(){
      }, function(error){
         window.location = 'review.html';
     });
+    
 }
 //obtiene el evento cambio desde el input que sube archivos.
 document.getElementById('campoArchivo').addEventListener("change", function(evento){ 
