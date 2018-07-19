@@ -29,7 +29,7 @@ function facebookLoginWithFirebase(){
     firebase.auth().signInWithPopup(provider)
         .then((result)=>{
             const usuario = result.user.displayName;
-            location = '../../html/perfil.html';
+            location = '../../html/muro.html';
             console.log(result);
 
             console.log('usuario: ' + usuario)
@@ -49,7 +49,7 @@ function googleLoginWithFirebase(){
     const provider = new firebase.auth.GoogleAuthProvider();
     firebase.auth().signInWithPopup(provider).then((result) => {    
     //     console.log(result);
-    location = '../../html/perfil.html' //Url aqui
+    location = '../../html/muro.html' //Url aqui
     //  const usuario = firebase.auth().currentUser;
     //  console.log(usuario);
         const token =  result.credential.accessToken;
