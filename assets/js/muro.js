@@ -13,11 +13,18 @@ $(document).ready(function(){
 
 
 firebase.database().ref('postuser')
-    .limitToLast(2)
+    .limitToLast(20)
     .on('child_added', (newPost)=>{
         console.log(newPost)
     const cont = document.getElementById('cont');
     const newComments = document.createElement('div');
+    const divcontenedor =  document.createElement('div');
+    divcontenedor.classList = 'col s12';
+    const pcrreator = document.createElement('p');
+    const newtetcreator = document.createTextNode(newPost.val().creatorName);
+    const imgcreator = document.createElement('img');
+    imgcreator.classList = 'imgpostcreator';
+    imgcreator.setAttribute('src', newPost.val().creatorImg);
     const chck = document.createElement('input');
     chck.type = 'checkbox';
     const heart = document.createElement('i');
@@ -27,18 +34,23 @@ firebase.database().ref('postuser')
     let contenedorElemento = document.createElement('p');
     let textNewComment = document.createTextNode(newPost.val().text)
     contenedorElemento.appendChild(textNewComment);
+    pcrreator.appendChild(newtetcreator);
+    divcontenedor.appendChild(imgcreator);
+    divcontenedor.appendChild(pcrreator);
+
     newComments.appendChild(chck);
     newComments.appendChild(heart);
     newComments.appendChild(trash);
+
     newComments.appendChild(contenedorElemento);
+    cont.appendChild(divcontenedor)
     cont.appendChild(newComments);
     heart.addEventListener('click', ()=> {
         heart.classList.toggle('red');
     })
     trash.addEventListener('click', ()=> {
         cont.removeChild(newComments);
-        ref = new Firebase("https://love-your-body.firebaseio.com/postuser")
-       ref.child(newPost.val().key).remove()
+
     })
     chck.addEventListener('click', ()=> {
         contenedorElemento.classList.toggle('strike-out');
@@ -54,7 +66,7 @@ function sendPost(){
         const postUserTextarea = document.getElementById('postUser').value;
     
         const newMessageKey = firebase.database().ref().child('postuser').push().key;
-    removerNodoFirebase(newMessageKey);
+
     firebase.database().ref(`postuser/${newMessageKey}`).set({
         creator : currentUser.uid,
         creatorName : currentUser.displayName,

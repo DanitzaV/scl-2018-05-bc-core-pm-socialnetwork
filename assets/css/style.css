@@ -229,6 +229,25 @@ p {
 	display: inline-block;
 	margin-left: 0.5em;
 }
+#sendPhoto
+{
+    background-color: rgb(146, 214, 236);
+    border: 0px;
+    border-radius: 0.5em;
+	cursor: pointer;
+	text-align: center;
+	margin: 3em auto;
+	width: 130px;
+	height: 30px;
+	display: block;
+	color: #FFF;
+  
+}
+.imgpostcreator {
+    margin-top: 1em;
+    width: 13%;
+    border-radius: 50%;
+}
 
 
 /*modificado...*/
@@ -246,5 +265,35 @@ p {
 
 .shopImg{
     height: 10em;
-    border: 1px solid black;
+   
 }
+#photoFileSelector{
+    background-color: rgb(146, 214, 236);
+}
+
+.file-input {
+    visibility: hidden;
+    width: 0;
+    position: relative;
+  
+  }
+  .file-input::before {
+      
+    content: 'selecciona foto';
+    display: inline-block;
+    background: rgb(57, 195, 241);
+    color: grey; 
+    border-radius: 3px;
+    padding: 5px 8px;
+    outline: none;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    cursor: pointer;
+    text-shadow: 1px 1px #fff;
+    font-weight: 700;
+    font-size: 10pt;
+    visibility: visible;
+    position: absolute;
+    
+  }
+ 
