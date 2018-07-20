@@ -35,12 +35,12 @@ function facebookLoginWithFirebase(){
 
     firebase.auth().signInWithPopup(provider)
         .then((result)=>{
-            const usuario = result.user.displayName;
+            // const usuario = result.user.displayName;
             location = '../../html/muro.html';
-            console.log(result);
+            // console.log(result);
 
-            console.log('usuario: ' + usuario)
-            console.log("Login con facebook exitoso");
+            // console.log('usuario: ' + usuario)
+            // console.log("Login con facebook exitoso");
 
 
 
@@ -56,7 +56,7 @@ function googleLoginWithFirebase(){
     const provider = new firebase.auth.GoogleAuthProvider();
     firebase.auth().signInWithPopup(provider).then((result) => {    
 
-      console.log(result);
+    //   console.log(result);
     location = '../../html/muro.html' //Url aqui
     //  const usuario = firebase.auth().currentUser;
     //  console.log(usuario);

@@ -50,7 +50,6 @@ firebase.database().ref('postuser')
     })
     trash.addEventListener('click', ()=> {
         cont.removeChild(newComments);
-
     })
     chck.addEventListener('click', ()=> {
         contenedorElemento.classList.toggle('strike-out');
@@ -66,7 +65,6 @@ function sendPost(){
         const postUserTextarea = document.getElementById('postUser').value;
     
         const newMessageKey = firebase.database().ref().child('postuser').push().key;
-
     firebase.database().ref(`postuser/${newMessageKey}`).set({
         creator : currentUser.uid,
         creatorName : currentUser.displayName,
@@ -78,7 +76,7 @@ function sendPost(){
 // Muro -> Subir foto
 
 function sendPhotoToStorage(){
-    const photoFile = photoFileSelector.files[0];
+    const photoFile = photoFileSelector.value;
     const fileName = photoFile.name; // nombre del archivo, sirve para armar la ruta
     const metadata = { // datos sobre el archivo que estamos subiendo
         contentType : photoFile.type// tipo de archivo que estamos subiendo
@@ -158,38 +156,38 @@ function getCount(ref) {
 };
 */
 
-const boton = document.getElementById('btn');
-boton.addEventListener('click', () => { 
-    let comments = document.getElementById("postUser").value;
-    if(comments.length == 0  ) {
-        document.getElementById("postUser").disabled = false;
-    }else{
-        document.getElementById("postUser").disabled = true;
-        document.getElementById("postUser").value = '';
-    const cont = document.getElementById('cont');
-    const newComments = document.createElement('div');
-    const chck = document.createElement('input');
-    chck.type = 'checkbox';
-    const heart = document.createElement('i');
-    heart.classList.add('fa', 'fa-heart', 'heart');
-    const trash = document.createElement('i');
-    trash.classList.add('fa', 'fa-trash', 'trash');
-    const contenedorElemento = document.createElement('p');
-    let textNewComment = document.createTextNode(comments);
-    contenedorElemento.appendChild(textNewComment);
-    newComments.appendChild(chck);
-    newComments.appendChild(heart);
-    newComments.appendChild(trash);
-    newComments.appendChild(contenedorElemento);
-    cont.appendChild(newComments);
-    heart.addEventListener('click', ()=> {
-        heart.classList.toggle('red');
-    })
-    trash.addEventListener('click', ()=> {
-        cont.removeChild(newComments);
-    })
-    chck.addEventListener('click', ()=> {
-        contenedorElemento.classList.toggle('strike-out');
-    });
-    }
-});
+// const boton = document.getElementById('btn');
+// boton.addEventListener('click', () => { 
+//     let comments = document.getElementById("postUser").value;
+//     if(comments.length == 0  ) {
+//         document.getElementById("postUser").disabled = false;
+//     }else{
+//         document.getElementById("postUser").disabled = true;
+//         document.getElementById("postUser").value = '';
+//     const cont = document.getElementById('cont');
+//     const newComments = document.createElement('div');
+//     const chck = document.createElement('input');
+//     chck.type = 'checkbox';
+//     const heart = document.createElement('i');
+//     heart.classList.add('fa', 'fa-heart', 'heart');
+//     const trash = document.createElement('i');
+//     trash.classList.add('fa', 'fa-trash', 'trash');
+//     const contenedorElemento = document.createElement('p');
+//     let textNewComment = document.createTextNode(comments);
+//     contenedorElemento.appendChild(textNewComment);
+//     newComments.appendChild(chck);
+//     newComments.appendChild(heart);
+//     newComments.appendChild(trash);
+//     newComments.appendChild(contenedorElemento);
+//     cont.appendChild(newComments);
+//     heart.addEventListener('click', ()=> {
+//         heart.classList.toggle('red');
+//     })
+//     trash.addEventListener('click', ()=> {
+//         cont.removeChild(newComments);
+//     })
+//     chck.addEventListener('click', ()=> {
+//         contenedorElemento.classList.toggle('strike-out');
+//     });
+//     }
+// });
