@@ -69,21 +69,18 @@
                         <img id="photoUser">
                     </div>
                 </div>
-                   <div>
-                
-                    <input type="file" id="photoFileSelector"> <input id="sendPhoto" type="button" onclick="sendPhotoToStorage()" value="SEND PHOTO">
-                </div>    
-                    
-                <div class="row">
+                <div>
+                    <input type="file" accept="image/*" class="file-input"  id="photoFileSelector">  <input id="sendPhoto" type="button" onclick="sendPhotoToStorage()" value="subir foto">
+                </div> 
                     <div class="col s12">
                         <button type="submit" onclick="sendPost()" id="btn"><i class="fa fa-plus" aria-hidden="true" ></i> comentar</button>
-                    </div>
+                
                 </div>
             
                 
                 <!-- contenedor comentarios -->
                 <div class="row">
-                    <div class="col-12" id="cont"></div>
+                    <div class="col-12" id="cont" style="border: 2px black"></div>
                 </div>
             </div>
         </section>
