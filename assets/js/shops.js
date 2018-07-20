@@ -1,3 +1,4 @@
+let tipoAccion = '';
 function saveReview(){
     let msg ='';
     const nombreTienda = document.getElementById('txtNombreTienda').value;
@@ -18,28 +19,39 @@ function saveReview(){
         let f = new Date();
         let fecha = f.getDate() + "/" + (f.getMonth() +1) + "/" + f.getFullYear();
          //Para tener una nueva llave en la colección messages
-        const newReviewKey = firebase.database().ref().child('review').push().key;
-         firebase.database().ref(`review/${newReviewKey}`).set({
-             creator : currentUser.uid,
-             creatorName : currentUser.displayName,
-             fechaReview : fecha,
-             nombreTienda: nombreTienda,
-             imagenTienda : imgReview,
-             reviewTienda : reviewTienda
-         }, function(error){
-            window.location = 'review.html';
-        });
+        console.log(tipoAccion);
+        if(tipoAccion === ''){
+            console.log('nuevo');
+            let newReviewKey = firebase.database().ref().child('review').push().key;
+            firebase.database().ref(`review/${newReviewKey}`).set({
+                creator : currentUser.uid,
+                creatorName : currentUser.displayName,
+                fechaReview : fecha,
+                nombreTienda: nombreTienda,
+                imagenTienda : imgReview,
+                reviewTienda : reviewTienda
+            }, function(error){
+               window.location = 'review.html';
+           });            
+        }else{
+            console.log('modificar');
+            firebase.database().ref(`review/${tipoAccion}`).set({
+                creator : currentUser.uid,
+                creatorName : currentUser.displayName,
+                fechaReview : fecha,
+                nombreTienda: nombreTienda,
+                imagenTienda : imgReview,
+                reviewTienda : reviewTienda
+              }, function(error){
+                window.location = 'review.html';
+            });          
+        }
+        
+
     }else{
        alert('Tiene campos sin completar:\n' + msg);
     }
 }
-
-function validateReview(){
-
-
-}
-
-
 
 //obtiene el evento cambio desde el input que sube archivos.
 document.getElementById('campoArchivo').addEventListener("change", function(evento){ 
@@ -50,9 +62,10 @@ document.getElementById('campoArchivo').addEventListener("change", function(even
 
 // función que se encargará de subir el archivo
 function subirArchivo(archivo) {
+    const currentUser = firebase.auth().currentUser;
     let storageService = firebase.storage();
     // creo una referencia al lugar donde guardaremos el archivo
-    let refStorage = storageService.ref('images').child(archivo.name);
+    let refStorage = storageService.ref('images').child(currentUser.uid + archivo.name);
     // Comienzo la tarea de upload
     const uploadTask = refStorage.put(archivo);
 
@@ -70,3 +83,17 @@ function subirArchivo(archivo) {
         }
     );
 }
+if( localStorage.getItem("reviewId") != null){
+    console.log('id=' + localStorage.getItem("reviewId"));
+    let id = localStorage.getItem("reviewId");
+    tipoAccion = localStorage.getItem("reviewId");
+    var review = firebase.database().ref(`review/${id}`);
+    review.on('value', function(Review) {
+      console.log(Review.val());
+      document.getElementById('txtNombreTienda').value = Review.val().nombreTienda;
+      document.getElementById('txtReview').value = Review.val().reviewTienda ;
+      document.getElementById('imgReview').src = Review.val().imagenTienda;
+    });
+}
+localStorage.removeItem('reviewId');
+

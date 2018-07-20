@@ -1,8 +1,12 @@
 
+
+
 firebase.database().ref('review')
 .limitToLast(10)
 .on('child_added', (newReview)=>{
-    //console.log(newReview.val());
+    const currentUser = firebase.auth().currentUser;
+
+    console.log(newReview.key);
     
     let contenedor = document.getElementById('reviewContent');
     
@@ -66,8 +70,43 @@ firebase.database().ref('review')
     
     divReview.appendChild(divRowData);
     divReview.appendChild(divReviewTienda);
-   
-    
+
+   if(newReview.val().creator ===  currentUser.uid){
+    let divActionTienda = document.createElement('div');
+    divActionTienda.classList.add("row");
+
+    let butonActionTienda = document.createElement('button');
+    butonActionTienda.classList.add("btn","btn-small");
+    butonActionTienda.innerHTML = 'Modificar';
+    butonActionTienda.onclick = function(){
+      let id = this.parentNode.firstChild.value; 
+      localStorage.setItem('reviewId',id);
+      window.location = 'shops.html'
+      return false;
+    };
+    let butonEliminarTienda = document.createElement('button');
+    butonEliminarTienda.classList.add("btn","btn-small");
+    butonEliminarTienda.innerHTML = 'Eliminar';
+    butonEliminarTienda.onclick = function(){
+      let id = this.parentNode.firstChild.value;  
+      if(confirm("¿esta segura que desea eliminar el review de la tienda?")){
+          firebase.database().ref(`review/${id}`).remove();
+          window.location = 'review.html';
+      }
+      return false;
+    };
+
+    var hidenUserId = document.createElement("input");
+    hidenUserId.type = "hidden";
+    hidenUserId.value = newReview.key;
+
+    divActionTienda.appendChild(hidenUserId);
+    divActionTienda.appendChild(butonActionTienda);
+    divActionTienda.appendChild(butonEliminarTienda);
+
+    divReview.appendChild(divActionTienda);
+   }
+
     contenedor.appendChild(divReview);
    
 });

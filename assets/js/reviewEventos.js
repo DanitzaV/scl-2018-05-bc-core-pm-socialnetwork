@@ -1,7 +1,9 @@
 firebase.database().ref('event')
 .limitToLast(10)
 .on('child_added', (newReview)=>{
-    console.log(newReview.val());
+    const currentUser = firebase.auth().currentUser;
+
+    console.log(newReview.key);
     
     let contenedor = document.getElementById('reviewContent');
     
@@ -15,9 +17,12 @@ firebase.database().ref('event')
     let divImgTienda = document.createElement('div');
     divImgTienda.classList.add("col", "m3");
 
-    let tiendaImg = document.createElement("image")
+    let tiendaImg = document.createElement("img")
     tiendaImg.style.height = '10em';
-    tiendaImg.setAttribute('src', newReview.val().imagenTienda);
+    tiendaImg.style.width = '10em';
+    //console.log('imagen:' + newReview.val().imagenTienda);
+
+    tiendaImg.setAttribute('src',  newReview.val().imagenTienda);
 
     divImgTienda.appendChild(tiendaImg);
 
@@ -48,8 +53,6 @@ firebase.database().ref('event')
     divRowData.appendChild(divImgTienda);
     divRowData.appendChild(divDataTienda);
 
-    
-
 
     let divReviewTienda = document.createElement('div');
     divReviewTienda.classList.add("row");
@@ -62,13 +65,48 @@ firebase.database().ref('event')
     
     divReview.appendChild(divRowData);
     divReview.appendChild(divReviewTienda);
-   
-    
+
+   if(newReview.val().creator ===  currentUser.uid){
+    let divActionTienda = document.createElement('div');
+    divActionTienda.classList.add("row");
+
+    let butonActionTienda = document.createElement('button');
+    butonActionTienda.classList.add("btn","btn-small");
+    butonActionTienda.innerHTML = 'Modificar';
+    butonActionTienda.onclick = function(){
+      let id = this.parentNode.firstChild.value; 
+      localStorage.setItem('eventId',id);
+      window.location = 'eventos.html'
+      return false;
+    };
+    let butonEliminarTienda = document.createElement('button');
+    butonEliminarTienda.classList.add("btn","btn-small");
+    butonEliminarTienda.innerHTML = 'Eliminar';
+    butonEliminarTienda.onclick = function(){
+      let id = this.parentNode.firstChild.value;  
+      if(confirm("¿esta segura que desea eliminar el evento?")){
+          firebase.database().ref(`event/${id}`).remove();
+          window.location = 'revieweventos.html';
+      }
+      return false;
+    };
+
+    var hidenUserId = document.createElement("input");
+    hidenUserId.type = "hidden";
+    hidenUserId.value = newReview.key;
+
+    divActionTienda.appendChild(hidenUserId);
+    divActionTienda.appendChild(butonActionTienda);
+    divActionTienda.appendChild(butonEliminarTienda);
+
+    divReview.appendChild(divActionTienda);
+   }
+
     contenedor.appendChild(divReview);
    
 });
 
 function newReview(){
-    window.location = 'eventos.html';
+    window.location = 'Eventos.html';
 
 }

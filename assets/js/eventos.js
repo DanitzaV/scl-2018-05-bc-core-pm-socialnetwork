@@ -1,27 +1,58 @@
+let tipoAccion = '';
 function saveReview(){
-    const currentUser = firebase.auth().currentUser;
-    console.log(currentUser);
+    let msg ='';
     const nombreTienda = document.getElementById('txtNombreTienda').value;
     const reviewTienda = document.getElementById('txtReview').value;
-    //const nombreTienda = document.getElementById('').value;
-    let f = new Date();
-    let fecha = f.getDate() + "/" + (f.getMonth() +1) + "/" + f.getFullYear();
-     //Para tener una nueva llave en la colección messages
-    const newReviewKey = firebase.database().ref().child('review').push().key;
-    //Campos que se guardaran en la base de datos. 
-    firebase.database().ref(`event/${newReviewKey}`).set({
-         creator : currentUser.uid,
-         creatorName : currentUser.displayName,
-         fechaReview : fecha,
-         nombreTienda: nombreTienda,
-         imagenTienda : '',
-         reviewTienda : reviewTienda
-     }, function(error){
-        //cuando completa la insercion del nuevo registro se envia a la pagina de listado.
-        window.location = 'reviewEventos.html';
-    });
-    
+    const imgReview = document.getElementById('imgReview').src;
+
+    if(nombreTienda === ''){
+        msg = msg + 'Tiene que tener un nombre.\n';
+    }
+    if(reviewTienda === ''){
+        msg = msg + 'Tiene que tener un review.\n';        
+    }
+
+    if(msg === ''){
+        const currentUser = firebase.auth().currentUser;
+
+        //const nombreTienda = document.getElementById('').value;
+        let f = new Date();
+        let fecha = f.getDate() + "/" + (f.getMonth() +1) + "/" + f.getFullYear();
+         //Para tener una nueva llave en la colección messages
+        console.log(tipoAccion);
+        if(tipoAccion === ''){
+            console.log('nuevo');
+            let newReviewKey = firebase.database().ref().child('event').push().key;
+            firebase.database().ref(`event/${newReviewKey}`).set({
+                creator : currentUser.uid,
+                creatorName : currentUser.displayName,
+                fechaReview : fecha,
+                nombreTienda: nombreTienda,
+                imagenTienda : imgReview,
+                reviewTienda : reviewTienda
+            }, function(error){
+               window.location = 'revieweventos.html';
+           });            
+        }else{
+            console.log('modificar');
+            firebase.database().ref(`event/${tipoAccion}`).set({
+                creator : currentUser.uid,
+                creatorName : currentUser.displayName,
+                fechaReview : fecha,
+                nombreTienda: nombreTienda,
+                imagenTienda : imgReview,
+                reviewTienda : reviewTienda
+              }, function(error){
+                window.location = 'revieweventos.html';
+            });          
+        }
+        
+
+    }else{
+       alert('Tiene campos sin completar:\n' + msg);
+    }
 }
+
 //obtiene el evento cambio desde el input que sube archivos.
 document.getElementById('campoArchivo').addEventListener("change", function(evento){ 
     evento.preventDefault();
@@ -31,11 +62,12 @@ document.getElementById('campoArchivo').addEventListener("change", function(even
 
 // función que se encargará de subir el archivo
 function subirArchivo(archivo) {
+    const currentUser = firebase.auth().currentUser;
     let storageService = firebase.storage();
     // creo una referencia al lugar donde guardaremos el archivo
-    let refStorage = storageService.ref('images').child(archivo.name);
+    let refStorage = storageService.ref('images').child(currentUser.uid + archivo.name);
     // Comienzo la tarea de upload
-    let uploadTask = refStorage.put(archivo);
+    const uploadTask = refStorage.put(archivo);
 
     // defino un evento para saber qué pasa con ese upload iniciado
     uploadTask.on('state_changed', null,
@@ -43,12 +75,25 @@ function subirArchivo(archivo) {
             console.log('Error al subir el archivo', error);
         },
         function(){
-            console.log(uploadTask);
-            console.log(uploadTask.snapshot);
-            console.log('Subida completada');
-
-            document.getElementById('imgReview').src = uploadTask.snapshot.downloadURL;
-        //mensajeFinalizado(uploadTask.snapshot.downloadURL, uploadTask.snapshot.totalBytes);
+            //obtiene la url de la imagen recien subida
+            uploadTask.snapshot.ref.getDownloadURL().then(function(downloadURL) {
+                //cambia el source de la imagen por la url de la imagen recien subida
+                document.getElementById('imgReview').src = downloadURL;
+              });
         }
     );
-    }
+}
+if( localStorage.getItem("eventId") != null){
+    console.log('id=' + localStorage.getItem("eventId"));
+    let id = localStorage.getItem("eventId");
+    tipoAccion = localStorage.getItem("eventId");
+    var review = firebase.database().ref(`event/${id}`);
+    review.on('value', function(Review) {
+      console.log(Review.val());
+      document.getElementById('txtNombreTienda').value = Review.val().nombreTienda;
+      document.getElementById('txtReview').value = Review.val().reviewTienda ;
+      document.getElementById('imgReview').src = Review.val().imagenTienda;
+    });
+}
+localStorage.removeItem('eventId');
+
