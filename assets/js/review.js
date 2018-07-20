@@ -2,7 +2,7 @@
 firebase.database().ref('review')
 .limitToLast(10)
 .on('child_added', (newReview)=>{
-    console.log(newReview.val());
+    //console.log(newReview.val());
     
     let contenedor = document.getElementById('reviewContent');
     
@@ -16,8 +16,12 @@ firebase.database().ref('review')
     let divImgTienda = document.createElement('div');
     divImgTienda.classList.add("col", "m3");
 
-    let tiendaImg = document.createElement("image")
-    tiendaImg.setAttribute('src', '');
+    let tiendaImg = document.createElement("img")
+    tiendaImg.style.height = '10em';
+    tiendaImg.style.width = '10em';
+    //console.log('imagen:' + newReview.val().imagenTienda);
+
+    tiendaImg.setAttribute('src',  newReview.val().imagenTienda);
 
     divImgTienda.appendChild(tiendaImg);
 
