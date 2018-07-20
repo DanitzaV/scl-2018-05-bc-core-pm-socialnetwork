@@ -5,7 +5,14 @@ $(document).ready(function(){
    });
 
   
-
+ firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+      console.log(user)
+    } else {
+      // No user is signed in.
+    }
+  });
+  
 
 // creamos un nuevo objeto con firebase
 // utilizamos setcustomparametres , display popup, con eso le decimos  firebase que hagas el login con facebook en un popup
@@ -48,16 +55,18 @@ function facebookLoginWithFirebase(){
 function googleLoginWithFirebase(){
     const provider = new firebase.auth.GoogleAuthProvider();
     firebase.auth().signInWithPopup(provider).then((result) => {    
-    //     console.log(result);
+
+      console.log(result);
     location = '../../html/muro.html' //Url aqui
     //  const usuario = firebase.auth().currentUser;
     //  console.log(usuario);
         const token =  result.credential.accessToken;
+
         
        
         // location.href = '../../html/perfil.html';
         
-        console.log('usuario: ' + user + ' toke: ' + token + ' foto url: ' + fotouser);
+
        
       
 

@@ -1,3 +1,4 @@
+
 //jquery materialize 
 $(document).ready(function(){
     $('.sidenav').sidenav();
@@ -5,34 +6,65 @@ $(document).ready(function(){
 
 
 // Muro-> Opcion postear
-   
+/*function removerNodoFirebase(params) {
+    let ref = ('https://love-your-body.firebaseio.com/postuser/')
+    ref.child(key).remove()
+}*/
 
 
+firebase.database().ref('postuser')
+    .limitToLast(2)
+    .on('child_added', (newPost)=>{
+        console.log(newPost)
+    const cont = document.getElementById('cont');
+    const newComments = document.createElement('div');
+    const chck = document.createElement('input');
+    chck.type = 'checkbox';
+    const heart = document.createElement('i');
+    heart.classList.add('fa', 'fa-heart', 'heart');
+    const trash = document.createElement('i');
+    trash.classList.add('fa', 'fa-trash', 'trash');
+    let contenedorElemento = document.createElement('p');
+    let textNewComment = document.createTextNode(newPost.val().text)
+    contenedorElemento.appendChild(textNewComment);
+    newComments.appendChild(chck);
+    newComments.appendChild(heart);
+    newComments.appendChild(trash);
+    newComments.appendChild(contenedorElemento);
+    cont.appendChild(newComments);
+    heart.addEventListener('click', ()=> {
+        heart.classList.toggle('red');
+    })
+    trash.addEventListener('click', ()=> {
+        cont.removeChild(newComments);
+        ref = new Firebase("https://love-your-body.firebaseio.com/postuser")
+       ref.child(newPost.val().key).remove()
+    })
+    chck.addEventListener('click', ()=> {
+        contenedorElemento.classList.toggle('strike-out');
+    });
     
-    
-
+    });
 
 //Muro-> Guardar mensajes posteados y mostrarlos en pantalla al momento de cargar la página.
 
 function sendPost(){
-        const currentUser = firebase.auth().currentUser;
-       console.log(currentUser);
-        const postUserTextarea = document.getElementById('cont').value;
+    const currentUser = firebase.auth().currentUser;
+    console.log(currentUser);
+        const postUserTextarea = document.getElementById('postUser').value;
     
-        //Para tener una nueva llave en la colección messages
-        const newMessageKe = firebase.database().ref().child('postUser').push().key;
-                              
-        
-        firebase.database().ref(`postUser/${newMessageKe}`).set({
-            creator : currentUser.uid,
-            creatorName : currentUser.displayName,
-            creatorImg: currentUser.photoURL,
-            text : postUserTextarea
-        });
+        const newMessageKey = firebase.database().ref().child('postuser').push().key;
+    removerNodoFirebase(newMessageKey);
+    firebase.database().ref(`postuser/${newMessageKey}`).set({
+        creator : currentUser.uid,
+        creatorName : currentUser.displayName,
+        creatorImg: currentUser.photoURL,
+        text : postUserTextarea
+    });
 };
 
 // Muro -> Subir foto
-/*
+
 function sendPhotoToStorage(){
     const photoFile = photoFileSelector.files[0];
     const fileName = photoFile.name; // nombre del archivo, sirve para armar la ruta
@@ -47,9 +79,17 @@ function sendPhotoToStorage(){
     task.then(snapshot => snapshot.ref.getDownloadURL())  //obtenemos la url de descarga (de la imagen)
         .then(url => {
             console.log("URL del archivo > "+url);
-        });
-    }
-*/
+            const currentUsers = firebase.auth().currentUser;
+            cont.innerHTML += `
+            <img style="width: 25%; display: flex" src="${currentUsers.photoURL}">
+            <p> ${currentUsers.displayName}</p>
+            <img style="width: 200px; display: flex" src="${url}">
+            `; 
+        });    
+}
+
+
+
 //Muro-> Contador de likes
 /*
 // counters/${ID}
