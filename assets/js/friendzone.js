@@ -3,19 +3,20 @@ $(document).ready(function(){
     $('.sidenav').sidenav();
 });
 
-// Función dropdown navbar
-$('.dropdown-trigger').dropdown();
-
-let cantidadDeAmiwos = document.getElementById("cantidadDeAmigos");
-
-
-agregarAmiguitoas = (userId, name , email, imageUrl) => {
-    firebase.database().ref('users/' + userId).set({
+saveUsers = () => { 
+//Para tener una nueva llave en la colección messages
+const newUsersKey = firebase.database().ref().child('users').push().key;
+    // Estos campos se guardarán en la data
+    firebase.database().ref(`users/${newUsersKey}`).set({
         username: name,
-        email: email,
         profile_picture : imageUrl
     });
+
 }
+
+// Número de la cantidad de amigos
+let cantidadDeAmiwos = document.getElementById("cantidadDeAmigos");
+
 
 eliminarAmigoa = () => {
     remove();

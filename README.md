@@ -17,26 +17,24 @@ Un emprendedor muy visionario nos ha encargado crear una red social. No nos da m
 
 ¿Te gusta verte bien?, pero ¿te cuesta encontrar ropa adecuada a tu cuerpo y estilo?, ¿crees que solo a ti te pasa?, ¿te sientes diferente a l@s demás?.
 
-Muchas mujeres sienten que es una odisea poder encontrar vestimenta a su medida y a su estilo o les apena ser catalogadas de descuidadas con su alimentación por su contextura física. Si eres parte de este grupo, ¡tranquila!, aquí te presentamos nuestro nuestro proyecto que te ayudrá a sentirte mejor.
+Muchas mujeres sienten que es una odisea encontrar vestimenta a su medida y a su estilo, o les apena ser catalogadas de descuidadas con su alimentación por su contextura física. Si eres parte de este grupo, ¡tranquila!, aquí te presentamos nuestro proyecto que te ayudará a sentirte mejor.
 
 Somos Valeria, Viviana, Loreto y Javiera y queremos dar solución a tu problema.
 
-Para ello tenemos una red social "Love Your Body", donde junto a otras mujeres encontrarás contensión y podrás compartir experiencias que te ayudarán a aceptar y valorar tu cuerpo. 
+Para ello tenemos una red social "Love Your Body", donde junto a otras mujeres encontrarás contención y podrás compartir experiencias que te ayudarán a aceptar y valorar tu cuerpo. 
 Siempre recuerda "No solo l@s delgad@s pueden verse bien".
 
 Por medio de la interacción social podrás:
-
 - Sentirte segura con tu cuerpo.
 - Tener una red de apoyo (Recuerda que no eres la única).
 - Encontrar datos interesantes de tiendas maravillosas que te ofrecen ropa a tu medida y estilo.
 - Asistir a eventos interesantes de tu interés.
-- Recibir tips de alimentación saudable.
+- Recibir tips de alimentación saludable.
 
 Si eres parte de nuestra red social **Love Your Body** no te sentirás sola, y entenderás que NO necesitas cambiar tu aspecto físico para sentirte bien y segura de ti misma.
-
-Ésta red social fue creada para mujeres y por mujeres que entienden a fondo tus precupaciones y te harán sentir única, con una autoestima equilibrada y feliz.
-
+Ésta red social fue creada para mujeres y por mujeres que entienden a fondo tus preocupaciones y te harán sentir única, con una autoestima equilibrada y feliz.
 Si quieres ser parte de esta red social de mujeres positivas, ¡¡Únete!!
+
 
 ## Encuesta de filtro
 
@@ -58,6 +56,29 @@ La imagen mostrada en la encuesta tuvo diversas opiniones y emociones en nuestro
 
 Por consiguiente nos sentimos emocionadas por la actitud que tomaron las personas encuestadas, puesto que tenemos la seguridad de que la red social que vamos a elaborar tendrá éxito debido a la opinión que se genera a partir de las emociones que genera el movimiento “the body positive”.
 
+## Entrevistas
+
+Entrevistas que realizadas por Javiera Sereño:
+
+Entrevistada 1: Sandra [Escucha aquí la entrevista1](https://drive.google.com/file/d/1NBpG7EPOXmT5Lo8cEn1qns5XFlaplz1B/view?usp=drivesdk)
+
+Entrevistada 2: Ximena [Escucha aquí la entrevista](https://drive.google.com/file/d/130gnKMifp9P1qZepcMuUDJAL_vRNV0ke/view?usp=drivesdk)
+
+Entrevistas que realizadas por Loreto Henríquez:
+
+Entrevistada 1: [Escucha aquí la entrevista1](https://drive.google.com/file/d/1NBpG7EPOXmT5Lo8cEn1qns5XFlaplz1B/view?usp=drivesdk)
+
+Entrevistada 2: [Escucha aquí la entrevista](https://drive.google.com/file/d/130gnKMifp9P1qZepcMuUDJAL_vRNV0ke/view?usp=drivesdk)
+
+## BrenchMarck
+
+Una de las primeras etapas para adentrarnos en el proyecto fue estudiar a la competencia directa o indirecta y adquirir una noción general de lo que existe en el mercado. Dentro de esta fase se realiza el benchmarks, que es un proceso de análisis comparativo de sitios web en el que destacamos las ventajas y desventajas de los elementos según criterios de diseño y contenidos.
+
+El objetivo principal de un benchmark consiste en traducir los resultados de la investigación en buenas prácticas que guiarán las propuestas de diseño y el posterior desarrollo del sitio. 
+
+En el siguiente link podrá acceder al documento.
+
+(https://drive.google.com/file/d/1hAyjfOipNYt894lf0_FAbULvHKNBmnVh/view?usp=sharing)
 
 ## Prototipo de Baja fidelidad
 
@@ -70,7 +91,11 @@ Por consiguiente nos sentimos emocionadas por la actitud que tomaron las persona
 
 ## Trello, Planificación de proyecto.
 
-Si quieres ver como nos organizamos para cumplir nuestros objetivos y a la vez conocer las tareas que realizamos cada una ingresa a aquí...
+La planificación se trata de definir cada paso con el fin de cumplir pequeños logros encaminados a cumplir una meta más grande. Planificar permite prevenir problemas que se pudieran presentar o, en su defecto, tener tiempo para solucionar y sobreponerse ante cualquier contratiempo que surja fuera de lo establecido.
+
+Si quieres ver como nos organizamos para cumplir nuestros objetivos y a la vez conocer las tareas que realizamos cada una ingresa a al siguiente link.
+
+(https://trello.com/b/LVAWMjj3/red-social)
 
 
 
