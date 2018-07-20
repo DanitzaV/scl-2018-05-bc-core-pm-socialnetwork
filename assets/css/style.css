@@ -133,40 +133,8 @@ p {
     font-size: 2em; 
 }
 
-.fa-whmcs {
-    font-size: 23px;
-    margin-top: 11px;
-    margin-left: 11px;
-    color: rgb(109, 107, 107);
-} 
-
-.fa-user {
-    font-size: 20px;
-    margin-top: 33px;
-    margin-left: 11px;
-    color: rgb(109, 107, 107);
-} 
-
 p {
     margin:0;
-}
-
-.perf {
-    margin-top: 20px;
-    cursor: pointer;   
-}
-
-.dropdown-trigger {
-    background-color: #B4DEDC;
-}
-
-.btn:hover {
-    background-color: #B4DEDC;
-}
-.dropdown-content {
-    min-width: 175px;
-    height: 134;
-    top: -44px;
 }
 
 /* Estilos generales */
