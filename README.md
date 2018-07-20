@@ -60,19 +60,15 @@ Por consiguiente nos sentimos emocionadas por la actitud que tomaron las persona
 
 Entrevistas que realizadas por Javiera Sereño:
 
-Entrevistada 1: Sandra [Escucha aquí la entrevista1] 
-(https://drive.google.com/file/d/1NBpG7EPOXmT5Lo8cEn1qns5XFlaplz1B/view?usp=drivesdk)
+Entrevistada 1: Sandra [Escucha aquí la entrevista1](https://drive.google.com/file/d/1NBpG7EPOXmT5Lo8cEn1qns5XFlaplz1B/view?usp=drivesdk)
 
-Entrevistada 2: Ximena [Escucha aquí la entrevista]
-(https://drive.google.com/file/d/130gnKMifp9P1qZepcMuUDJAL_vRNV0ke/view?usp=drivesdk)
+Entrevistada 2: Ximena [Escucha aquí la entrevista](https://drive.google.com/file/d/130gnKMifp9P1qZepcMuUDJAL_vRNV0ke/view?usp=drivesdk)
 
 Entrevistas que realizadas por Loreto Henríquez:
 
-Entrevistada 1: [Escucha aquí la entrevista1] 
-(https://drive.google.com/file/d/1NBpG7EPOXmT5Lo8cEn1qns5XFlaplz1B/view?usp=drivesdk)
+Entrevistada 1: [Escucha aquí la entrevista1](https://drive.google.com/file/d/1NBpG7EPOXmT5Lo8cEn1qns5XFlaplz1B/view?usp=drivesdk)
 
-Entrevistada 2: [Escucha aquí la entrevista]
-(https://drive.google.com/file/d/130gnKMifp9P1qZepcMuUDJAL_vRNV0ke/view?usp=drivesdk)
+Entrevistada 2: [Escucha aquí la entrevista](https://drive.google.com/file/d/130gnKMifp9P1qZepcMuUDJAL_vRNV0ke/view?usp=drivesdk)
 
 ## BrenchMarck
 
